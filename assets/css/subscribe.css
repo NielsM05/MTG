@@ -1,0 +1,15 @@
+#subscribe.page{
+    padding-top: 5%;  
+}
+#subscribe.page .popup{
+    padding: 2rem;
+    width: 40%;    
+    min-width: 45rem;
+    margin: 0 auto;
+    
+    border-radius: 1%; 
+    padding-top: 12rem;
+    background-size: 30rem;
+}
+
+

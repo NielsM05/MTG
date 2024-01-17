@@ -1,0 +1,52 @@
+#stats.page{
+    padding-top:7rem;
+}
+#stats.page .popup{
+    width: 60%;
+    min-width: 45rem;
+    margin: 0 auto;
+    
+    border-radius: 1%;  
+    background-size: 15rem; 
+    
+    min-height: 30vh;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    padding-top: 12rem;
+    background-size: 30rem;
+}
+
+#stats header{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#stats .manas{
+    display: flex;
+}
+
+#stats .manas  li > p{
+    text-align: center;
+}
+
+
+#stats #type-stats{
+    margin-bottom: 2rem;
+}
+
+#stats #type-stats p span{
+    display: inline-block;
+    width: 15rem;
+}
+
+#stats #type-stats li.total p{
+    font-weight: bold;    
+}
+
+#stats #type-stats li{
+    margin-bottom: 0.5rem;
+}
+
+#stats #mana-stats li{
+    margin-right: 1rem;
+}

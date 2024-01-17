@@ -1,0 +1,171 @@
+#deck-building.page{
+    
+}
+
+#deck-building.page .popup{
+    padding: 0.5rem;
+    width: 100%; 
+    margin: 0 auto;   
+    background-size: 15rem; 
+    padding-top:2rem;   
+    min-height: 100vh;
+    padding-right: 0;
+    box-sizing: border-box;
+    background-position: 2rem 2rem;
+}
+
+#deck-building h3, #deck-building h3+.filter{
+
+    margin-bottom: 1rem;
+ 
+}
+
+
+
+#deck-building h3+.filter{
+    
+    display: flex;
+}
+
+#deck-building h3+.filter .active{
+    border: 0.125rem solid  #F5AA55;
+}
+
+
+#deck-building h3+.filter input{
+    width: 20rem;
+    margin-right: 1rem;
+}
+
+ 
+#deck-building h4{
+    padding: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+
+
+#deck-building .card-pool ul.cards{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow: scroll;
+    padding-bottom: 1rem;
+
+    
+}
+
+#deck-building  ul.cards li{    
+    flex: 0 0 8rem;    
+    margin: 0.125rem;
+}
+
+/*
+#deck-building  ul.cards li:hover img{
+    border: 0.125rem solid #ccc;
+    position: absolute;
+    width: 20rem;
+    margin-left: -5rem;
+    margin-top: -5rem;
+}
+*/
+
+
+#deck-building .builder{
+    width: 80%;
+}
+
+
+#deck-building .card-pool{
+    width:99%;
+    min-width: 33rem;
+    height: 21rem;
+    padding: 1rem;
+    border: 0.125rem solid #000;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    
+}
+
+
+
+#deck-building .deck{
+    width: 99%;
+    padding: 1rem;
+    padding-bottom:0;
+    box-sizing: border-box;
+    min-height: 17rem;
+    border: 0.125rem solid #000;
+    background-color: #fff;     
+}
+
+#deck-building .card-detail{
+    width: 20%;            
+}
+
+#deck-building .card-detail .detail{
+    
+    
+    border-right: 0;
+    padding: 1rem;
+    border: 0.125rem solid #000;
+    border-right: 0;
+    background-color: #fff;
+    
+    
+}
+
+
+#deck-building .deck ol{
+    justify-content: flex-start;
+    padding-bottom: 1rem;
+}
+
+#deck-building .deck ol li{    
+    margin: 0 0.5rem;
+    background-color: #eee;
+    
+    
+}
+
+#deck-building .deck ol > li  ul{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    width: 8rem;
+    min-height: 10rem;
+
+    
+
+}
+
+
+
+
+#deck-building .deck img{
+    max-width: 100%;
+}
+
+#deck-building .builder.container{
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    
+}
+
+
+#deck-building .manas button.mana.selected{
+    box-shadow: 0px 0px 11px gold;
+}
+
+
+#deck-building .advice{
+    font-style: italic;
+    color: #777;
+    font-size:0.9rem;
+    text-align: center;
+    margin: 1rem 0;
+}

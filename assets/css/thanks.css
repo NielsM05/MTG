@@ -1,0 +1,23 @@
+#thanks.page{
+    padding-top: 30vh; 
+}
+#thanks.page .popup{
+    width: 60%;
+    min-width: 45rem;
+    margin: 0 auto;
+     
+    border-radius: 1%;  
+    background-size: 15rem; 
+    padding-top:7rem;
+    min-height: 8rem;
+}
+
+#thanks header{
+    margin-bottom: 2rem;
+}
+
+
+#thanks p{
+    text-align: center;
+    font-size: 1.3rem;
+}

@@ -1,0 +1,62 @@
+form{
+    width: 100%;
+    color:  #888;
+    
+}
+input, select, textarea, label{
+    display: block;
+}
+
+
+
+input{
+    font-size: 1.2rem;
+    padding:  0.125rem 0.25rem;
+    width: 100%;
+    box-sizing: border-box;
+    border:0;
+    border-bottom: 0.125rem #ccc solid;
+    background-color: transparent;
+    margin-bottom: 2rem;
+}
+
+input:focus{
+    border-color: #444;
+}
+
+label{
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+input[type="checkbox"], input[type="checkbox"]+label, input[type="radio"], input[type="radio"]+label{
+    display: inline-block;
+    width: auto;
+}
+
+input[type="checkbox"]:checked+label, input[type="radio"]:checked+label{
+    color: #000;
+}
+
+input[type="submit"], button.nav{
+    font-size: 1.3rem;    
+    width: 8rem;
+    text-align: center;    
+    padding:  0.5rem;
+    background-color: #F5AA55;
+    border: 0;
+    display: block;
+    margin: 0.5rem 1rem;
+}
+
+a.nav{
+    font-size: 1.3rem;    
+    width: 8rem;
+    text-align: center;    
+    padding:  0.5rem;
+    background-color: #F5AA55;
+    border: 0;
+    display: block;
+    margin: 0.5rem 1rem;
+
+}

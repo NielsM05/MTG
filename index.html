@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link type="text/css" rel="stylesheet" href="assets/css/reset.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,500&display=swap"
+                rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+        <link type="text/css" rel="stylesheet" href="assets/css/form.css">
+        <link type="text/css" rel="stylesheet" href="assets/css/subscribe.css">
+        <link type="text/css" rel="stylesheet" href="assets/css/boosters.css">
+        <link type="text/css" rel="stylesheet" href="assets/css/deck.css">
+        <link type="text/css" rel="stylesheet" href="assets/css/stats.css">
+        <link type="text/css" rel="stylesheet" href="assets/css/thanks.css">
+
+
+        <script src="assets/js/utils.js"></script>
+        <script src="assets/js/config.js"></script>
+
+        <script src="assets/js/data/cards.js"></script>
+
+        <script src="assets/js/services/cardService.js"></script>
+        <script src="assets/js/services/deckService.js"></script>
+
+        <script src="assets/js/navigation.js"></script>
+
+
+        <script src="assets/js/pages/subscribe.js"></script>
+        <script src="assets/js/pages/boosters.js"></script>
+        <script src="assets/js/pages/deck.js"></script>
+        <script src="assets/js/pages/stats.js"></script>
+        <script src="assets/js/pages/thanks.js"></script>
+
+        <script src="assets/js/main.js"></script>
+</head>
+
+<body>
+        <main>
+                <section id="subscribe" class="page  ">
+
+                        <div class="popup shadow">
+                                <header>
+                                        <h2>subscription</h2>
+
+                                </header>
+
+                                <form>
+                                        <!-- ADD FORM HERE -->
+                                        <label for="name">Name</label>
+                                        <input type="text" id="name" required>
+                                        <label for="birthdate">Birthdate</label>
+                                        <input type="text" id="birthdate" required>
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" required>
+                                        <label id="sets">Sets</label>
+                                        <label for="boost">Boosters</label>
+                                        <input type="number" id="boost" min="4" max="10" required>
+                                        <input type="submit" class="next shadow" data-target="boosters"
+                                                value="subscribe">
+                                </form>
+                        </div>
+                </section>
+                <section id="boosters" class="page hidden">
+                        <div class="popup shadow">
+                                <header>
+                                        <h2>open boosters</h2>
+                                        <div class="container">
+                                                <button class="nav next shadow" data-target="deck-building">build
+                                                        deck</button>
+                                        </div>
+                                </header>
+
+
+                                <!-- DYNAMIC LOADED WITH JAVASCRIPT -->
+                                <ul id="unopenedBoosters" class="container boosters">
+                                        <li><img src="images/ala/booster_v1.jpg" alt="booster" title="booster"
+                                                        data-booster="1" data-open="0"></li>
+                                        <li><img src="images/ala/booster_v1.jpg" alt="booster" title="booster"
+                                                        data-booster="2" data-open="0"></li>
+                                        <li><img src="images/ala/booster_v0.jpg" alt="booster" title="booster"
+                                                        data-booster="3" data-open="1"></li>
+                                        <li><img src="images/ala/booster_v1.jpg" alt="booster" title="booster"
+                                                        data-booster="4" data-open="0"></li>
+                                        <li><img src="images/ala/booster_v3.jpg" alt="booster" title="booster"
+                                                        data-booster="5" data-open="0"></li>
+                                        <li><img src="images/ala/booster_v3.jpg" alt="booster" title="booster"
+                                                        data-booster="6" data-open="0"></li>
+                                </ul>
+
+                                <!-- DYNAMIC LOADED WITH JAVASCRIPT -->
+                                <ul id="openedBooster" class="container cards">
+                                        <li><img class="card"
+                                                        src="https://cards.scryfall.io/border_crop/front/3/b/3b214b6f-4734-4200-8467-92d7e3469b5d.jpg?1562702928"
+                                                        alt="Tezzeret the Seeker" title="Tezzeret the Seeker"
+                                                        data-id="3b214b6f-4734-4200-8467-92d7e3469b5d"
+                                                        data-sequence-id="0"></li>
+                                        <li><img class="card"
+                                                        src="https://cards.scryfall.io/border_crop/front/7/e/7e6ac9ce-e163-426f-8fbd-5ee1ec177dc1.jpg?1562705860"
+                                                        alt="Violent Ultimatum" title="Violent Ultimatum"
+                                                        data-id="7e6ac9ce-e163-426f-8fbd-5ee1ec177dc1"
+                                                        data-sequence-id="1"></li>
+                                        <li><img class="card"
+                                                        src="https://cards.scryfall.io/border_crop/front/7/a/7a0ddf00-926c-4283-a8b2-daa02fa99b8b.jpg?1562705657"
+                                                        alt="Jund Charm" title="Jund Charm"
+                                                        data-id="7a0ddf00-926c-4283-a8b2-daa02fa99b8b"
+                                                        data-sequence-id="2"></li>
+                                        <li><img class="card"
+                                                        src="https://cards.scryfall.io/border_crop/front/6/e/6edc0681-4252-4d3d-baf3-f03c22af1208.jpg?1562705213"
+                                                        alt="Arcane Sanctum" title="Arcane Sanctum"
+                                                        data-id="6edc0681-4252-4d3d-baf3-f03c22af1208"
+                                                        data-sequence-id="3"></li>
+                                        <li><img class="card"
+                                                        src="https://cards.scryfall.io/border_crop/front/4/f/4fe73f62-2e80-4d5f-b7b5-c54c895a3e4d.jpg?1562703809"
+                                                        alt="Naya Battlemage" title="Naya Battlemage"
+                                                        data-id="4fe73f62-2e80-4d5f-b7b5-c54c895a3e4d"
+                                                        data-sequence-id="4"></li>
+                                        <li><img class="card"
+                                                        src="https://cards.scryfall.io/border_crop/front/9/8/98e43870-4bed-4d76-a633-a6326c736d22.jpg?1562706936"
+                                                        alt="Hindering Light" title="Hindering Light"
+                                                        data-id="98e43870-4bed-4d76-a633-a6326c736d22"
+                                                        data-sequence-id="5"></li>
+                                        <li><img class="card"
+                                                        src="https://cards.scryfall.io/border_crop/front/9/a/9aba0e7d-9146-402f-898e-16a0ff08d368.jpg?1562706980"
+                                                        alt="Windwright Mage" title="Windwright Mage"
+                                                        data-id="9aba0e7d-9146-402f-898e-16a0ff08d368"
+                                                        data-sequence-id="6"></li>
+                                        <li><img class="card"
+                                                        src="https://cards.scryfall.io/border_crop/front/0/3/0367fac8-6990-4544-ac7d-ed363b55a9cf.jpg?1562700664"
+                                                        alt="Savage Hunger" title="Savage Hunger"
+                                                        data-id="0367fac8-6990-4544-ac7d-ed363b55a9cf"
+                                                        data-sequence-id="7"></li>
+                                        <li><img class="card"
+                                                        src="https://cards.scryfall.io/border_crop/front/1/8/1850be87-54de-49b3-a407-6fb2b278b25c.jpg?1562701477"
+                                                        alt="Gift of the Gargantuan" title="Gift of the Gargantuan"
+                                                        data-id="1850be87-54de-49b3-a407-6fb2b278b25c"
+                                                        data-sequence-id="8"></li>
+                                        <li><img class="card"
+                                                        src="https://cards.scryfall.io/border_crop/front/6/d/6d6d2d84-7141-4485-8379-b3c71af47cd1.jpg?1562705126"
+                                                        alt="Viscera Dragger" title="Viscera Dragger"
+                                                        data-id="6d6d2d84-7141-4485-8379-b3c71af47cd1"
+                                                        data-sequence-id="9"></li>
+                                        <li><img class="card"
+                                                        src="https://cards.scryfall.io/border_crop/front/5/f/5f46870b-3d8d-4aae-8d59-6bd88a50b37c.jpg?1562704483"
+                                                        alt="Jungle Weaver" title="Jungle Weaver"
+                                                        data-id="5f46870b-3d8d-4aae-8d59-6bd88a50b37c"
+                                                        data-sequence-id="10"></li>
+                                        <li><img class="card"
+                                                        src="https://cards.scryfall.io/border_crop/front/6/8/680b7955-d939-4195-aba8-b46a8c925616.jpg?1562704894"
+                                                        alt="Resounding Thunder" title="Resounding Thunder"
+                                                        data-id="680b7955-d939-4195-aba8-b46a8c925616"
+                                                        data-sequence-id="11"></li>
+                                        <li><img class="card"
+                                                        src="https://cards.scryfall.io/border_crop/front/c/0/c0198220-073f-4479-a1c4-1bd626891e28.jpg?1562708547"
+                                                        alt="Vectis Silencers" title="Vectis Silencers"
+                                                        data-id="c0198220-073f-4479-a1c4-1bd626891e28"
+                                                        data-sequence-id="12"></li>
+                                        <li><img class="card"
+                                                        src="https://cards.scryfall.io/border_crop/front/a/3/a3776b1c-4a3f-43b9-962e-64010f286ba5.jpg?1562707331"
+                                                        alt="Court Archers" title="Court Archers"
+                                                        data-id="a3776b1c-4a3f-43b9-962e-64010f286ba5"
+                                                        data-sequence-id="13"></li>
+                                        <li><img class="card"
+                                                        src="https://cards.scryfall.io/border_crop/front/d/d/ddbbc7dc-efdf-46e8-bf19-0daa4034f6ec.jpg?1562709823"
+                                                        alt="Yoked Plowbeast" title="Yoked Plowbeast"
+                                                        data-id="ddbbc7dc-efdf-46e8-bf19-0daa4034f6ec"
+                                                        data-sequence-id="14"></li>
+                                </ul>
+                        </div>
+
+                </section>
+                <section id="deck-building" class="page hidden">
+                        <div class="popup shadow">
+                                <header>
+                                        <h2>deck building</h2>
+                                        <div class="container">
+                                                <a href="#" class="nav next shadow" data-target="stats">show stats</a>
+                                                <button class="nav next shadow" data-target="thanks">submit
+                                                        deck</button>
+                                        </div>
+                                        <p class="advice">We advise you to submit a two-color deck consisting of 40
+                                                cards,<br>
+                                                including a 17 lands, that produces one of the colors in your deck and
+                                                at least 15 creatures.
+                                        </p>
+                                </header>
+                                <div class="container">
+                                        <div class="builder container">
+                                                <section class="card-pool">
+                                                        <header>
+
+                                                                <h3>card pool <span></span></h3>
+                                                                <form class="filter">
+                                                                        <input type="text" id="search-pool"
+                                                                                name="search" placeholder="search">
+                                                                        <!-- DYNAMIC LOADED WITH JAVASCRIPT -->
+                                                                        <div class="container manas">
+                                                                                <button type="button" class="mana white selected"
+                                                                                        data-mana="W"></button>
+                                                                                <button type="button" class="mana blue selected"
+                                                                                        data-mana="U"></button>
+                                                                                <button type="button"
+                                                                                        class="mana black selected"
+                                                                                        data-mana="B"></button>
+                                                                                <button type="button"
+                                                                                        class="mana red selected"
+                                                                                        data-mana="R"></button>
+                                                                                <button type="button"
+                                                                                        class="mana green selected"
+                                                                                        data-mana="G"></button>
+                                                                                <button type="button"
+                                                                                        class="mana colorless selected"
+                                                                                        data-mana="A"></button>
+                                                                                <button type="button"
+                                                                                        class="mana land selected"
+                                                                                        data-mana=""></button>
+                                                                        </div>
+                                                                </form>
+                                                        </header>
+
+                                                        <!-- DYNAMIC LOADED WITH JAVASCRIPT -->
+                                                        <ul class="container cards scrollable">
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/6/e/6edc0681-4252-4d3d-baf3-f03c22af1208.jpg?1562705213"
+                                                                                alt="Arcane Sanctum"
+                                                                                title="Arcane Sanctum"
+                                                                                data-id="6edc0681-4252-4d3d-baf3-f03c22af1208"
+                                                                                data-sequence-id="0"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/b/2/b22c6b34-0066-47f8-8062-9363c024fa56.jpg?1562707961"
+                                                                                alt="Bant Panorama"
+                                                                                title="Bant Panorama"
+                                                                                data-id="b22c6b34-0066-47f8-8062-9363c024fa56"
+                                                                                data-sequence-id="1"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/0/3/03324b45-dd69-45d2-a1c0-e3cc4cf1eaf5.jpg?1562700663"
+                                                                                alt="Esper Panorama"
+                                                                                title="Esper Panorama"
+                                                                                data-id="03324b45-dd69-45d2-a1c0-e3cc4cf1eaf5"
+                                                                                data-sequence-id="2"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/1/2/12495cfa-ab19-4e9e-a49e-a94499f664a2.jpg?1562701238"
+                                                                                alt="Forest" title="Forest"
+                                                                                data-id="12495cfa-ab19-4e9e-a49e-a94499f664a2"
+                                                                                data-sequence-id="3"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/2/f/2fdcf679-4269-4ed9-84f1-1ac7a513f475.jpg?1562702452"
+                                                                                alt="Island" title="Island"
+                                                                                data-id="2fdcf679-4269-4ed9-84f1-1ac7a513f475"
+                                                                                data-sequence-id="4"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/7/c/7c2cc19c-84ce-4c0b-b56f-7a2b3878a26e.jpg?1562705723"
+                                                                                alt="Mountain" title="Mountain"
+                                                                                data-id="7c2cc19c-84ce-4c0b-b56f-7a2b3878a26e"
+                                                                                data-sequence-id="5"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/e/9/e94e2710-7b95-46d0-8261-0afa6b192e70.jpg?1562710288"
+                                                                                alt="Plains" title="Plains"
+                                                                                data-id="e94e2710-7b95-46d0-8261-0afa6b192e70"
+                                                                                data-sequence-id="6"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/c/1/c1995d2a-4550-4c84-ad44-183b06579e98.jpg?1562708600"
+                                                                                alt="Seaside Citadel"
+                                                                                title="Seaside Citadel"
+                                                                                data-id="c1995d2a-4550-4c84-ad44-183b06579e98"
+                                                                                data-sequence-id="7"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/4/5/45cbe554-ffdc-4de6-bf27-57790b71effb.jpg?1562703357"
+                                                                                alt="Swamp" title="Swamp"
+                                                                                data-id="45cbe554-ffdc-4de6-bf27-57790b71effb"
+                                                                                data-sequence-id="8"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/5/d/5d2a48f9-4f14-4d19-b3dc-3bf3fafac32d.jpg?1562704408"
+                                                                                alt="Minion Reflector"
+                                                                                title="Minion Reflector"
+                                                                                data-id="5d2a48f9-4f14-4d19-b3dc-3bf3fafac32d"
+                                                                                data-sequence-id="9"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/d/f/df6317b0-15fd-4924-9302-41bed2354546.jpg?1562709895"
+                                                                                alt="Obelisk of Naya"
+                                                                                title="Obelisk of Naya"
+                                                                                data-id="df6317b0-15fd-4924-9302-41bed2354546"
+                                                                                data-sequence-id="10"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/f/e/fef85030-d591-407d-8045-c595326dd6fa.jpg?1562711188"
+                                                                                alt="Banewasp Affliction"
+                                                                                title="Banewasp Affliction"
+                                                                                data-id="fef85030-d591-407d-8045-c595326dd6fa"
+                                                                                data-sequence-id="11"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/f/e/fef85030-d591-407d-8045-c595326dd6fa.jpg?1562711188"
+                                                                                alt="Banewasp Affliction"
+                                                                                title="Banewasp Affliction"
+                                                                                data-id="fef85030-d591-407d-8045-c595326dd6fa"
+                                                                                data-sequence-id="12"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/7/f/7f42bdeb-5a51-4303-96d8-9722f95d2905.jpg?1562705893"
+                                                                                alt="Blister Beetle"
+                                                                                title="Blister Beetle"
+                                                                                data-id="7f42bdeb-5a51-4303-96d8-9722f95d2905"
+                                                                                data-sequence-id="13"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/d/4/d4a4b3a3-b7ae-4210-8037-098fdf5808d0.jpg?1562709424"
+                                                                                alt="Bone Splinters"
+                                                                                title="Bone Splinters"
+                                                                                data-id="d4a4b3a3-b7ae-4210-8037-098fdf5808d0"
+                                                                                data-sequence-id="14"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/d/4/d4a4b3a3-b7ae-4210-8037-098fdf5808d0.jpg?1562709424"
+                                                                                alt="Bone Splinters"
+                                                                                title="Bone Splinters"
+                                                                                data-id="d4a4b3a3-b7ae-4210-8037-098fdf5808d0"
+                                                                                data-sequence-id="15"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/f/5/f5aa309e-5df3-4419-9e9c-3fd928c1e360.jpg?1562710813"
+                                                                                alt="Demon's Herald"
+                                                                                title="Demon's Herald"
+                                                                                data-id="f5aa309e-5df3-4419-9e9c-3fd928c1e360"
+                                                                                data-sequence-id="16"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/2/e/2e030fb1-12a8-4c28-836f-8097ec753271.jpg?1562702375"
+                                                                                alt="Glaze Fiend" title="Glaze Fiend"
+                                                                                data-id="2e030fb1-12a8-4c28-836f-8097ec753271"
+                                                                                data-sequence-id="17"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/3/6/3686eb57-e9c8-480f-8ab4-2894e1b5fe20.jpg?1562702765"
+                                                                                alt="Onyx Goblet" title="Onyx Goblet"
+                                                                                data-id="3686eb57-e9c8-480f-8ab4-2894e1b5fe20"
+                                                                                data-sequence-id="18"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/3/6/3686eb57-e9c8-480f-8ab4-2894e1b5fe20.jpg?1562702765"
+                                                                                alt="Onyx Goblet" title="Onyx Goblet"
+                                                                                data-id="3686eb57-e9c8-480f-8ab4-2894e1b5fe20"
+                                                                                data-sequence-id="19"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/7/a/7ab9a62a-5503-430d-8b67-061a46b5c22c.jpg?1562705669"
+                                                                                alt="Undead Leotau"
+                                                                                title="Undead Leotau"
+                                                                                data-id="7ab9a62a-5503-430d-8b67-061a46b5c22c"
+                                                                                data-sequence-id="20"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/6/d/6d6d2d84-7141-4485-8379-b3c71af47cd1.jpg?1562705126"
+                                                                                alt="Viscera Dragger"
+                                                                                title="Viscera Dragger"
+                                                                                data-id="6d6d2d84-7141-4485-8379-b3c71af47cd1"
+                                                                                data-sequence-id="21"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/b/5/b51e84d7-bf9f-454f-bdcd-a2458b1b5b33.jpg?1562708096"
+                                                                                alt="Behemoth's Herald"
+                                                                                title="Behemoth's Herald"
+                                                                                data-id="b51e84d7-bf9f-454f-bdcd-a2458b1b5b33"
+                                                                                data-sequence-id="22"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/3/4/34748acb-7045-42b6-a93f-a3f11a1bc839.jpg?1562702691"
+                                                                                alt="Cavern Thoctar"
+                                                                                title="Cavern Thoctar"
+                                                                                data-id="34748acb-7045-42b6-a93f-a3f11a1bc839"
+                                                                                data-sequence-id="23"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/3/4/34748acb-7045-42b6-a93f-a3f11a1bc839.jpg?1562702691"
+                                                                                alt="Cavern Thoctar"
+                                                                                title="Cavern Thoctar"
+                                                                                data-id="34748acb-7045-42b6-a93f-a3f11a1bc839"
+                                                                                data-sequence-id="24"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/d/e/de32bf78-73c2-4cd4-b3b3-ef8be53e1e5e.jpg?1562709851"
+                                                                                alt="Druid of the Anima"
+                                                                                title="Druid of the Anima"
+                                                                                data-id="de32bf78-73c2-4cd4-b3b3-ef8be53e1e5e"
+                                                                                data-sequence-id="25"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/9/d/9d83b664-a17e-4a48-8b9a-bd3af2d9cd87.jpg?1562707139"
+                                                                                alt="Drumhunter" title="Drumhunter"
+                                                                                data-id="9d83b664-a17e-4a48-8b9a-bd3af2d9cd87"
+                                                                                data-sequence-id="26"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/0/3/032059cb-c1ad-4cc9-a89d-d68289800312.jpg?1562700656"
+                                                                                alt="Godtoucher" title="Godtoucher"
+                                                                                data-id="032059cb-c1ad-4cc9-a89d-d68289800312"
+                                                                                data-sequence-id="27"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/0/3/032059cb-c1ad-4cc9-a89d-d68289800312.jpg?1562700656"
+                                                                                alt="Godtoucher" title="Godtoucher"
+                                                                                data-id="032059cb-c1ad-4cc9-a89d-d68289800312"
+                                                                                data-sequence-id="28"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/b/c/bcb023a2-e929-47e9-bd58-cbc6f241e7a4.jpg?1562708428"
+                                                                                alt="Keeper of Progenitus"
+                                                                                title="Keeper of Progenitus"
+                                                                                data-id="bcb023a2-e929-47e9-bd58-cbc6f241e7a4"
+                                                                                data-sequence-id="29"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/7/5/7531879b-d5fd-4b60-b838-733883571473.jpg?1562705476"
+                                                                                alt="Naturalize" title="Naturalize"
+                                                                                data-id="7531879b-d5fd-4b60-b838-733883571473"
+                                                                                data-sequence-id="30"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/7/5/7531879b-d5fd-4b60-b838-733883571473.jpg?1562705476"
+                                                                                alt="Naturalize" title="Naturalize"
+                                                                                data-id="7531879b-d5fd-4b60-b838-733883571473"
+                                                                                data-sequence-id="31"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/2/1/217bf237-a758-4500-b221-5e88fed9d0fc.jpg?1562701871"
+                                                                                alt="Resounding Roar"
+                                                                                title="Resounding Roar"
+                                                                                data-id="217bf237-a758-4500-b221-5e88fed9d0fc"
+                                                                                data-sequence-id="32"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/0/3/0367fac8-6990-4544-ac7d-ed363b55a9cf.jpg?1562700664"
+                                                                                alt="Savage Hunger"
+                                                                                title="Savage Hunger"
+                                                                                data-id="0367fac8-6990-4544-ac7d-ed363b55a9cf"
+                                                                                data-sequence-id="33"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/7/7/77ef536d-d55b-447a-b6ab-04123f1cfaa3.jpg?1562705599"
+                                                                                alt="Soul's Might" title="Soul's Might"
+                                                                                data-id="77ef536d-d55b-447a-b6ab-04123f1cfaa3"
+                                                                                data-sequence-id="34"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/7/7/77ef536d-d55b-447a-b6ab-04123f1cfaa3.jpg?1562705599"
+                                                                                alt="Soul's Might" title="Soul's Might"
+                                                                                data-id="77ef536d-d55b-447a-b6ab-04123f1cfaa3"
+                                                                                data-sequence-id="35"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/5/e/5eb18038-eb6a-4d27-ba52-52a1cee6b512.jpg?1562704462"
+                                                                                alt="Wild Nacatl" title="Wild Nacatl"
+                                                                                data-id="5eb18038-eb6a-4d27-ba52-52a1cee6b512"
+                                                                                data-sequence-id="36"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/8/7/8769e8f6-15ad-4f1b-bb4d-848ae6b7549e.jpg?1562706248"
+                                                                                alt="Bloodthorn Taunter"
+                                                                                title="Bloodthorn Taunter"
+                                                                                data-id="8769e8f6-15ad-4f1b-bb4d-848ae6b7549e"
+                                                                                data-sequence-id="37"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/9/e/9eab4120-e7d8-4132-a304-30b88e3175e2.jpg?1562707210"
+                                                                                alt="Dragon Fodder"
+                                                                                title="Dragon Fodder"
+                                                                                data-id="9eab4120-e7d8-4132-a304-30b88e3175e2"
+                                                                                data-sequence-id="38"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/4/b/4b8b8b90-cb6e-4910-bc40-d96b78b0d70c.jpg?1562703618"
+                                                                                alt="Hissing Iguanar"
+                                                                                title="Hissing Iguanar"
+                                                                                data-id="4b8b8b90-cb6e-4910-bc40-d96b78b0d70c"
+                                                                                data-sequence-id="39"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/5/a/5ad3381e-ae2f-40cf-8a7b-62375e9f453e.jpg?1562704324"
+                                                                                alt="Incurable Ogre"
+                                                                                title="Incurable Ogre"
+                                                                                data-id="5ad3381e-ae2f-40cf-8a7b-62375e9f453e"
+                                                                                data-sequence-id="40"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/e/e/ee8c962f-11b0-48f7-bbba-a2212e41990f.jpg?1562710488"
+                                                                                alt="Jund Battlemage"
+                                                                                title="Jund Battlemage"
+                                                                                data-id="ee8c962f-11b0-48f7-bbba-a2212e41990f"
+                                                                                data-sequence-id="41"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/e/e/ee8c962f-11b0-48f7-bbba-a2212e41990f.jpg?1562710488"
+                                                                                alt="Jund Battlemage"
+                                                                                title="Jund Battlemage"
+                                                                                data-id="ee8c962f-11b0-48f7-bbba-a2212e41990f"
+                                                                                data-sequence-id="42"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/8/f/8fc1ad4c-b394-48b9-9a5a-ec9f42bf6a00.jpg?1562706538"
+                                                                                alt="Lightning Talons"
+                                                                                title="Lightning Talons"
+                                                                                data-id="8fc1ad4c-b394-48b9-9a5a-ec9f42bf6a00"
+                                                                                data-sequence-id="43"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/7/0/708ec768-f455-48e4-b834-e0a2b3768c45.jpg?1562705262"
+                                                                                alt="Magma Spray" title="Magma Spray"
+                                                                                data-id="708ec768-f455-48e4-b834-e0a2b3768c45"
+                                                                                data-sequence-id="44"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/d/4/d4f26025-8777-41a2-a871-ea8d1af164ae.jpg?1562709440"
+                                                                                alt="Rockslide Elemental"
+                                                                                title="Rockslide Elemental"
+                                                                                data-id="d4f26025-8777-41a2-a871-ea8d1af164ae"
+                                                                                data-sequence-id="45"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/e/5/e59a0305-65f8-45c4-859e-6c73544dfa3e.jpg?1562710127"
+                                                                                alt="Soul's Fire" title="Soul's Fire"
+                                                                                data-id="e59a0305-65f8-45c4-859e-6c73544dfa3e"
+                                                                                data-sequence-id="46"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/e/5/e59a0305-65f8-45c4-859e-6c73544dfa3e.jpg?1562710127"
+                                                                                alt="Soul's Fire" title="Soul's Fire"
+                                                                                data-id="e59a0305-65f8-45c4-859e-6c73544dfa3e"
+                                                                                data-sequence-id="47"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/d/0/d040791e-eee4-4eef-ace1-507216a5d268.jpg?1562709199"
+                                                                                alt="Vicious Shadows"
+                                                                                title="Vicious Shadows"
+                                                                                data-id="d040791e-eee4-4eef-ace1-507216a5d268"
+                                                                                data-sequence-id="48"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/3/c/3c05e8a2-b7d0-4f24-b2ae-8e4db30e5842.jpg?1562702945"
+                                                                                alt="Blightning" title="Blightning"
+                                                                                data-id="3c05e8a2-b7d0-4f24-b2ae-8e4db30e5842"
+                                                                                data-sequence-id="49"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/8/d/8d61c4a0-054b-479e-82d9-dc60c5c708e2.jpg?1562706451"
+                                                                                alt="Rip-Clan Crasher"
+                                                                                title="Rip-Clan Crasher"
+                                                                                data-id="8d61c4a0-054b-479e-82d9-dc60c5c708e2"
+                                                                                data-sequence-id="50"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/9/2/92e21ff9-0030-4e53-8ddf-86d8e78e347f.jpg?1562706676"
+                                                                                alt="Steward of Valeron"
+                                                                                title="Steward of Valeron"
+                                                                                data-id="92e21ff9-0030-4e53-8ddf-86d8e78e347f"
+                                                                                data-sequence-id="51"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/0/d/0d267804-23de-4521-ae64-4dd5cd836c6c.jpg?1562701048"
+                                                                                alt="Cruel Ultimatum"
+                                                                                title="Cruel Ultimatum"
+                                                                                data-id="0d267804-23de-4521-ae64-4dd5cd836c6c"
+                                                                                data-sequence-id="52"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/a/3/a3d70a07-8d91-462c-aa96-901cc9a81531.jpg?1562707353"
+                                                                                alt="Esper Charm" title="Esper Charm"
+                                                                                data-id="a3d70a07-8d91-462c-aa96-901cc9a81531"
+                                                                                data-sequence-id="53"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/a/9/a98a6695-44ce-445f-b476-e18a0b5dd8f2.jpg?1562707577"
+                                                                                alt="Grixis Charm" title="Grixis Charm"
+                                                                                data-id="a98a6695-44ce-445f-b476-e18a0b5dd8f2"
+                                                                                data-sequence-id="54"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/8/9/8950df86-1e27-4b6b-8b5c-25298a3bda85.jpg?1562706338"
+                                                                                alt="Sprouting Thrinax"
+                                                                                title="Sprouting Thrinax"
+                                                                                data-id="8950df86-1e27-4b6b-8b5c-25298a3bda85"
+                                                                                data-sequence-id="55"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/2/4/249c188d-c11d-46f7-a2d8-a67df4ba401b.jpg?1562701999"
+                                                                                alt="Rafiq of the Many"
+                                                                                title="Rafiq of the Many"
+                                                                                data-id="249c188d-c11d-46f7-a2d8-a67df4ba401b"
+                                                                                data-sequence-id="56"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/d/a/da3ecfc6-1f9e-443e-a445-51df518025a5.jpg?1562709702"
+                                                                                alt="Realm Razer" title="Realm Razer"
+                                                                                data-id="da3ecfc6-1f9e-443e-a445-51df518025a5"
+                                                                                data-sequence-id="57"></li>
+                                                                <li><img class="card"
+                                                                                src="https://cards.scryfall.io/border_crop/front/1/9/19fb67e1-b791-4246-aebc-49fcf0f92c6c.jpg?1562701577"
+                                                                                alt="Rhox War Monk"
+                                                                                title="Rhox War Monk"
+                                                                                data-id="19fb67e1-b791-4246-aebc-49fcf0f92c6c"
+                                                                                data-sequence-id="58"></li>
+                                                        </ul>
+                                                </section>
+
+                                                <section class="deck">
+                                                        <header>
+                                                                <h3>deck: <span></span></h3>
+
+                                                                <form class="filter">
+                                                                        <input type="text" id="search-deck"
+                                                                                name="search" placeholder="search">
+                                                                        <!-- DYNAMIC LOADED WITH JAVASCRIPT -->
+                                                                        <div class="container manas">
+                                                                                <button type="button"
+                                                                                        class="mana white selected"
+                                                                                        data-mana="W"></button>
+                                                                                <button type="button"
+                                                                                        class="mana blue selected"
+                                                                                        data-mana="U"></button>
+                                                                                <button type="button"
+                                                                                        class="mana black selected"
+                                                                                        data-mana="B"></button>
+                                                                                <button type="button"
+                                                                                        class="mana red selected"
+                                                                                        data-mana="R"></button>
+                                                                                <button type="button"
+                                                                                        class="mana green selected"
+                                                                                        data-mana="G"></button>
+                                                                                <button type="button"
+                                                                                        class="mana colorless selected"
+                                                                                        data-mana="A"></button>
+                                                                                <button type="button"
+                                                                                        class="mana land selected"
+                                                                                        data-mana=""></button>
+                                                                        </div>
+                                                                </form>
+                                                        </header>
+
+                                                        <!-- DYNAMIC LOADED WITH JAVASCRIPT -->
+                                                        <ol class="cards container scrollable">
+                                                                <li data-cmc="0">
+                                                                        <h4>0</h4>
+                                                                        <ul>
+                                                                                <li><img class="card"
+                                                                                                src="https://cards.scryfall.io/border_crop/front/b/2/b22c6b34-0066-47f8-8062-9363c024fa56.jpg?1562707961"
+                                                                                                alt="Bant Panorama"
+                                                                                                title="Bant Panorama"
+                                                                                                data-id="b22c6b34-0066-47f8-8062-9363c024fa56"
+                                                                                                data-sequence-id="undefined">
+                                                                                </li>
+                                                                                <li><img class="card"
+                                                                                                src="https://cards.scryfall.io/border_crop/front/1/2/12495cfa-ab19-4e9e-a49e-a94499f664a2.jpg?1562701238"
+                                                                                                alt="Forest"
+                                                                                                title="Forest"
+                                                                                                data-id="12495cfa-ab19-4e9e-a49e-a94499f664a2"
+                                                                                                data-sequence-id="undefined">
+                                                                                </li>
+                                                                                <li><img class="card"
+                                                                                                src="https://cards.scryfall.io/border_crop/front/1/2/12495cfa-ab19-4e9e-a49e-a94499f664a2.jpg?1562701238"
+                                                                                                alt="Forest"
+                                                                                                title="Forest"
+                                                                                                data-id="12495cfa-ab19-4e9e-a49e-a94499f664a2"
+                                                                                                data-sequence-id="undefined">
+                                                                                </li>
+                                                                                <li><img class="card"
+                                                                                                src="https://cards.scryfall.io/border_crop/front/7/c/7c2cc19c-84ce-4c0b-b56f-7a2b3878a26e.jpg?1562705723"
+                                                                                                alt="Mountain"
+                                                                                                title="Mountain"
+                                                                                                data-id="7c2cc19c-84ce-4c0b-b56f-7a2b3878a26e"
+                                                                                                data-sequence-id="undefined">
+                                                                                </li>
+                                                                                <li><img class="card"
+                                                                                                src="https://cards.scryfall.io/border_crop/front/7/c/7c2cc19c-84ce-4c0b-b56f-7a2b3878a26e.jpg?1562705723"
+                                                                                                alt="Mountain"
+                                                                                                title="Mountain"
+                                                                                                data-id="7c2cc19c-84ce-4c0b-b56f-7a2b3878a26e"
+                                                                                                data-sequence-id="undefined">
+                                                                                </li>
+                                                                                <li><img class="card"
+                                                                                                src="https://cards.scryfall.io/border_crop/front/7/c/7c2cc19c-84ce-4c0b-b56f-7a2b3878a26e.jpg?1562705723"
+                                                                                                alt="Mountain"
+                                                                                                title="Mountain"
+                                                                                                data-id="7c2cc19c-84ce-4c0b-b56f-7a2b3878a26e"
+                                                                                                data-sequence-id="undefined">
+                                                                                </li>
+                                                                        </ul>
+                                                                </li>
+                                                                <li data-cmc="1">
+                                                                        <h4>1</h4>
+                                                                        <ul></ul>
+                                                                </li>
+                                                                <li data-cmc="2">
+                                                                        <h4>2</h4>
+                                                                        <ul>
+                                                                                <li><img class="card"
+                                                                                                src="https://cards.scryfall.io/border_crop/front/d/e/de32bf78-73c2-4cd4-b3b3-ef8be53e1e5e.jpg?1562709851"
+                                                                                                alt="Druid of the Anima"
+                                                                                                title="Druid of the Anima"
+                                                                                                data-id="de32bf78-73c2-4cd4-b3b3-ef8be53e1e5e"
+                                                                                                data-sequence-id="undefined">
+                                                                                </li>
+                                                                                <li><img class="card"
+                                                                                                src="https://cards.scryfall.io/border_crop/front/f/a/faccfa5f-4d89-4a86-92d7-36cb5a16c5c9.jpg?1562711018"
+                                                                                                alt="Elvish Visionary"
+                                                                                                title="Elvish Visionary"
+                                                                                                data-id="faccfa5f-4d89-4a86-92d7-36cb5a16c5c9"
+                                                                                                data-sequence-id="undefined">
+                                                                                </li>
+                                                                                <li><img class="card"
+                                                                                                src="https://cards.scryfall.io/border_crop/front/7/6/76fd1253-1af1-42a7-9875-4d6ac9ce722c.jpg?1562705547"
+                                                                                                alt="Goblin Deathraiders"
+                                                                                                title="Goblin Deathraiders"
+                                                                                                data-id="76fd1253-1af1-42a7-9875-4d6ac9ce722c"
+                                                                                                data-sequence-id="undefined">
+                                                                                </li>
+                                                                        </ul>
+                                                                </li>
+                                                                <li data-cmc="3">
+                                                                        <h4>3</h4>
+                                                                        <ul>
+                                                                                <li><img class="card"
+                                                                                                src="https://cards.scryfall.io/border_crop/front/b/f/bf290e2f-2c78-4cf5-8925-0c598ec0d60e.jpg?1562708509"
+                                                                                                alt="Vithian Stinger"
+                                                                                                title="Vithian Stinger"
+                                                                                                data-id="bf290e2f-2c78-4cf5-8925-0c598ec0d60e"
+                                                                                                data-sequence-id="undefined">
+                                                                                </li>
+                                                                        </ul>
+                                                                </li>
+                                                                <li data-cmc="4">
+                                                                        <h4>4</h4>
+                                                                        <ul>
+                                                                                <li><img class="card"
+                                                                                                src="https://cards.scryfall.io/border_crop/front/0/3/032059cb-c1ad-4cc9-a89d-d68289800312.jpg?1562700656"
+                                                                                                alt="Godtoucher"
+                                                                                                title="Godtoucher"
+                                                                                                data-id="032059cb-c1ad-4cc9-a89d-d68289800312"
+                                                                                                data-sequence-id="undefined">
+                                                                                </li>
+                                                                        </ul>
+                                                                </li>
+                                                                <li data-cmc="5">
+                                                                        <h4>5</h4>
+                                                                        <ul>
+                                                                                <li><img class="card"
+                                                                                                src="https://cards.scryfall.io/border_crop/front/b/5/b5178576-573d-4da8-97ae-a684e1e95fa4.jpg?1562708094"
+                                                                                                alt="Skullmulcher"
+                                                                                                title="Skullmulcher"
+                                                                                                data-id="b5178576-573d-4da8-97ae-a684e1e95fa4"
+                                                                                                data-sequence-id="undefined">
+                                                                                </li>
+                                                                                <li><img class="card"
+                                                                                                src="https://cards.scryfall.io/border_crop/front/8/8/88866ce7-0b81-4b6c-a17e-ce5e51a0f2da.jpg?1562706305"
+                                                                                                alt="Caldera Hellion"
+                                                                                                title="Caldera Hellion"
+                                                                                                data-id="88866ce7-0b81-4b6c-a17e-ce5e51a0f2da"
+                                                                                                data-sequence-id="undefined">
+                                                                                </li>
+                                                                        </ul>
+                                                                </li>
+                                                                <li data-cmc="6">
+                                                                        <h4>6</h4>
+                                                                        <ul>
+                                                                                <li><img class="card"
+                                                                                                src="https://cards.scryfall.io/border_crop/front/7/0/70206cff-9f54-4e27-982c-b0093a51d358.jpg?1562705250"
+                                                                                                alt="Sedris, the Traitor King"
+                                                                                                title="Sedris, the Traitor King"
+                                                                                                data-id="70206cff-9f54-4e27-982c-b0093a51d358"
+                                                                                                data-sequence-id="undefined">
+                                                                                </li>
+                                                                        </ul>
+                                                                </li>
+                                                                <li data-cmc="7">
+                                                                        <h4>7</h4>
+                                                                        <ul></ul>
+                                                                </li>
+                                                                <li data-cmc="8">
+                                                                        <h4>8</h4>
+                                                                        <ul></ul>
+                                                                </li>
+                                                        </ol>
+                                                </section>
+                                        </div>
+                                        <aside class="card-detail hidden ">
+                                                <!-- DYNAMIC LOADED WITH JAVASCRIPT -->
+                                                <div class="detail shadow">
+                                                        <img src="images/cardback.jpg" alt="no card" title="no card">
+                                                </div>
+                                        </aside>
+                                </div>
+                        </div>
+                </section>
+                <section id="stats" class="page hidden">
+                        <div class="popup shadow">
+                                <header>
+                                        <h2>stats</h2>
+                                        <div class="container">
+                                                <a href="#" class="nav next shadow" data-target="deck-building">back</a>
+                                        </div>
+                                </header>
+                                <div class="container">
+                                        <!-- DYNAMIC LOADED WITH JAVASCRIPT -->
+                                        <ul id="type-stats">
+                                                <li>
+                                                        <p><span>Creatures:</span> <span></span></p>
+                                                </li>
+                                                <li>
+                                                        <p><span>None creatures:</span> <span></span></p>
+                                                </li>
+                                                <li>
+                                                        <p><span>Lands:</span> <span></span></p>
+                                                </li>
+                                                <li class="total">
+                                                        <p><span>Total:</span> <span></span></p>
+                                                </li>
+                                        </ul>
+                                        <!-- DYNAMIC LOADED WITH JAVASCRIPT -->
+                                        <ul id="mana-stats" class="manas">
+                                                <li>
+                                                        <div class="mana white" data-mana="W"></div>
+                                                        <p><span id="W"></span><br><span id="W-P"></span></p>
+                                                </li>
+                                                <li>
+                                                        <div class="mana blue" data-mana="U"></div>
+                                                        <p><span id="U"></span><br><span id="U-P"></span></p>
+                                                </li>
+                                                <li>
+                                                        <div class="mana black" data-mana="B"></div>
+                                                        <p><span id="B"></span><br><span id="B-P"></span></p>
+                                                </li>
+                                                <li>
+                                                        <div class="mana red" data-mana="R"></div>
+                                                        <p><span id="R"></span><br><span id="R-P"></span></p>
+                                                </li>
+                                                <li>
+                                                        <div class="mana green" data-mana="G"></div>
+                                                        <p><span id="G"></span><br><span id="G-P"></span></p>
+                                                </li>
+                                                <li>
+                                                        <div class="mana colorless" data-mana="A"></div>
+                                                        <p><span id="A"></span><br><span id="A-P"></span></p>
+                                                </li>
+                                        </ul>
+                                </div>
+                        </div>
+                </section>
+
+                <section id="thanks" class="page hidden">
+                        <div class="popup shadow">
+                                <header>
+                                        <h2>Let the games begin!</h2>
+                                </header>
+                                <!-- DYNAMIC LOADED WITH JAVASCRIPT -->
+                                <p>Good luck and have fun <span id="userName"></span> with <span id="userSet"></span></p>
+                        </div>
+                </section>
+        </main>
+</body>
+
+</html>
